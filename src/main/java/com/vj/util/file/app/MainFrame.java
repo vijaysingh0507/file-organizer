@@ -3,8 +3,6 @@
  */
 package com.vj.util.file.app;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -53,12 +51,7 @@ TableModelListener, PropertyChangeListener {
         .setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         resultTable.getSelectionModel().addListSelectionListener(diskDataModel);
         resultTable.setAutoCreateRowSorter(true);
-        messageTimer = new Timer(1000, new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
-                statusBar.setText("");
-            }
-        });
+        messageTimer = new Timer(1000, e -> statusBar.setText(""));
         messageTimer.setRepeats(false);
     }
 
@@ -91,48 +84,24 @@ TableModelListener, PropertyChangeListener {
 
         chhoseFolderLabel.setText("Choose Folder:");
 
-        folderNameField.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(final java.awt.event.ActionEvent evt) {
-                findDuplicateButtonActionPerformed(evt);
-            }
-        });
+        folderNameField
+                .addActionListener(evt -> findDuplicateButtonActionPerformed(evt));
 
         browseButton.setText("Browse");
         browseButton.setActionCommand("browseFile");
-        browseButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(final java.awt.event.ActionEvent evt) {
-                browseButtonActionPerformed(evt);
-            }
-        });
+        browseButton.addActionListener(evt -> browseButtonActionPerformed(evt));
 
         findDuplicateButton.setText("Find Duplicates");
         findDuplicateButton
-        .addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(
-                    final java.awt.event.ActionEvent evt) {
-                findDuplicateButtonActionPerformed(evt);
-            }
-        });
+        .addActionListener(evt -> findDuplicateButtonActionPerformed(evt));
 
         deleteAllButton.setText("Delete All");
         deleteAllButton.setEnabled(false);
-        deleteAllButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(final java.awt.event.ActionEvent evt) {
-                deleteAllButtonActionPerformed(evt);
-            }
-        });
+        deleteAllButton
+                .addActionListener(evt -> deleteAllButtonActionPerformed(evt));
 
         filterButton.setText("Apply Filter");
-        filterButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(final java.awt.event.ActionEvent evt) {
-                filterButtonActionPerformed(evt);
-            }
-        });
+        filterButton.addActionListener(evt -> filterButtonActionPerformed(evt));
 
         final org.jdesktop.layout.GroupLayout filePanelLayout = new org.jdesktop.layout.GroupLayout(
                 filePanel);
@@ -354,12 +323,7 @@ TableModelListener, PropertyChangeListener {
         // </editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new MainFrame().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new MainFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

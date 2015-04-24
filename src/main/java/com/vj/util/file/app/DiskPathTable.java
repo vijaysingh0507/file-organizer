@@ -4,8 +4,6 @@
 package com.vj.util.file.app;
 
 import java.awt.Desktop;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Collection;
@@ -99,20 +97,15 @@ public class DiskPathTable extends JTable {
 
             }
             comboBox.setRenderer(new DiskComboBoxRenderer());
-            comboBox.addActionListener(new ActionListener() {
-
-                @Override
-                public void actionPerformed(final ActionEvent e) {
-                    try {
-                        Desktop.getDesktop().open(
-                                ((DiskPath) ((JComboBox<DiskPath>) e
-                                        .getSource()).getSelectedItem())
-                                        .getDiskFile());
-                    } catch (final IOException e1) {
-                        e1.printStackTrace();
-                    }
-
+            comboBox.addActionListener(e -> {
+                try {
+                    Desktop.getDesktop().open(
+                            ((DiskPath) ((JComboBox<DiskPath>) e.getSource())
+                                    .getSelectedItem()).getDiskFile());
+                } catch (final IOException e1) {
+                    e1.printStackTrace();
                 }
+
             });
             return new DefaultCellEditor(comboBox);
         }
