@@ -18,49 +18,49 @@ import java.nio.file.attribute.BasicFileAttributes;
  */
 public class FileCounter extends SimpleFileVisitor<Path> {
 
-	/**
+    /**
 	 * 
 	 */
-	private final Path startingDir;
-	/**
+    private final Path startingDir;
+    /**
 	 * 
 	 */
-	private long count = 0;
-	/**
+    private long count = 0;
+    /**
 	 * 
 	 */
-	private PathFilter filter;
+    private PathFilter filter;
 
-	public FileCounter(final Path startingDir) {
-		this.startingDir = startingDir;
-	}
+    public FileCounter(final Path startingDir) {
+        this.startingDir = startingDir;
+    }
 
-	public long getCount() throws IOException {
-		Files.walkFileTree(startingDir, this);
-		return count;
-	}
+    public long getCount() throws IOException {
+        Files.walkFileTree(startingDir, this);
+        return count;
+    }
 
-	@Override
-	public FileVisitResult visitFile(final Path file,
-			final BasicFileAttributes attr) {
-		if (attr.isRegularFile()
-				&& (filter == null || filter.accept(file, attr))) {
-			count++;
-		}
-		return CONTINUE;
-	}
+    @Override
+    public FileVisitResult visitFile(final Path file,
+            final BasicFileAttributes attr) {
+        if (attr.isRegularFile()
+                && (filter == null || filter.accept(file, attr))) {
+            count++;
+        }
+        return CONTINUE;
+    }
 
-	public PathFilter getFilter() {
-		return filter;
-	}
+    public PathFilter getFilter() {
+        return filter;
+    }
 
-	public void setFilter(final PathFilter filter) {
-		this.filter = filter;
-	}
+    public void setFilter(final PathFilter filter) {
+        this.filter = filter;
+    }
 
-	@Override
-	public FileVisitResult visitFileFailed(final Path file,
-			final IOException exc) {
-		return CONTINUE;
-	}
+    @Override
+    public FileVisitResult visitFileFailed(final Path file,
+            final IOException exc) {
+        return CONTINUE;
+    }
 }

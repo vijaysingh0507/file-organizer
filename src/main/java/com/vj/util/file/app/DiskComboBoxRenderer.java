@@ -17,31 +17,31 @@ import com.vj.util.file.DiskPath;
  */
 public class DiskComboBoxRenderer extends DefaultListCellRenderer {
 
-	/**
+    /**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * javax.swing.ListCellRenderer#getListCellRendererComponent(javax.swing
-	 * .JList, java.lang.Object, int, boolean, boolean)
-	 */
-	@Override
-	public Component getListCellRendererComponent(
-			final JList<? extends Object> list, final Object value,
-			final int index, final boolean isSelected,
-			final boolean cellHasFocus) {
-		final JComponent comp = (JComponent) super
-				.getListCellRendererComponent(list, value, index, isSelected,
-						cellHasFocus);
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * javax.swing.ListCellRenderer#getListCellRendererComponent(javax.swing
+     * .JList, java.lang.Object, int, boolean, boolean)
+     */
+    @Override
+    public Component getListCellRendererComponent(
+            final JList<? extends Object> list, final Object value,
+            final int index, final boolean isSelected,
+            final boolean cellHasFocus) {
+        final JComponent comp = (JComponent) super
+                .getListCellRendererComponent(list, value, index, isSelected,
+                        cellHasFocus);
 
-		if (-1 < index && null != value) {
-			list.setToolTipText(((DiskPath) value).getPath().toString());
-		}
-		return comp;
-	}
+        if (-1 < index && null != value) {
+            list.setToolTipText(((DiskPath) value).getPath().toString());
+        }
+        return comp;
+    }
 
 }

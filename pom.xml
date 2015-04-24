@@ -8,7 +8,7 @@
 	<name>file-organizer</name>
 	<properties>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
-		<compilesource>1.7</compilesource>
+		<compilesource>1.8</compilesource>
 	</properties>
 	<build>
 		<plugins>
