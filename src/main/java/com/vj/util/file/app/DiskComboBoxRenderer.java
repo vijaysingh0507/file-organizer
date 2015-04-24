@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.vj.util.file.app;
 
@@ -13,18 +13,18 @@ import com.vj.util.file.DiskPath;
 
 /**
  * @author Vijay
- * 
+ *
  */
 public class DiskComboBoxRenderer extends DefaultListCellRenderer {
 
     /**
-	 * 
-	 */
+     *
+     */
     private static final long serialVersionUID = 1L;
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * javax.swing.ListCellRenderer#getListCellRendererComponent(javax.swing
      * .JList, java.lang.Object, int, boolean, boolean)

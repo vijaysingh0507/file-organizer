@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.vj.util.file.app;
 
@@ -24,18 +24,18 @@ import com.vj.util.file.DiskPath;
 
 /**
  * @author Vijay
- * 
+ *
  */
 public class DiskPathTable extends JTable {
 
     /**
-	 * 
-	 */
+     *
+     */
     private static final long serialVersionUID = 1L;
 
     /**
-	 * 
-	 */
+     *
+     */
     public DiskPathTable() {
     }
 
@@ -105,8 +105,8 @@ public class DiskPathTable extends JTable {
                 public void actionPerformed(final ActionEvent e) {
                     try {
                         Desktop.getDesktop().open(
-                                ((DiskPath) (((JComboBox<DiskPath>) e
-                                        .getSource()).getSelectedItem()))
+                                ((DiskPath) ((JComboBox<DiskPath>) e
+                                        .getSource()).getSelectedItem())
                                         .getDiskFile());
                     } catch (final IOException e1) {
                         e1.printStackTrace();

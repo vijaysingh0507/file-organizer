@@ -11,29 +11,29 @@ import java.util.List;
 
 /**
  * @author Vijay Singh
- * 
+ *
  */
 public class DiskPath {
 
     /**
-	 * 
-	 */
+     *
+     */
     final private Path path;
     /**
-	 * 
-	 */
+     *
+     */
     final private BasicFileAttributes attrib;
     /**
-	 * 
-	 */
+     *
+     */
     final private DiskFile diskFile;
     /**
-	 * 
-	 */
+     *
+     */
     private List<DiskPath> duplicates;
     /**
-	 * 
-	 */
+     *
+     */
     final private FileSize fileSize;
 
     /**
@@ -43,17 +43,17 @@ public class DiskPath {
     public DiskPath(final Path path, final BasicFileAttributes attrib) {
         this.path = path;
         this.attrib = attrib;
-        this.diskFile = new DiskFile(path.toFile(), attrib.size());
-        this.fileSize = new FileSize(attrib.size());
+        diskFile = new DiskFile(path.toFile(), attrib.size());
+        fileSize = new FileSize(attrib.size());
     }
 
     public void addDuplicate(final DiskPath path) {
         synchronized (this) {
-            if (null == this.duplicates) {
-                this.duplicates = new ArrayList<DiskPath>();
+            if (null == duplicates) {
+                duplicates = new ArrayList<DiskPath>();
             }
         }
-        this.duplicates.add(path);
+        duplicates.add(path);
     }
 
     public void setDuplicates(final List<DiskPath> duplicates) {
@@ -66,61 +66,61 @@ public class DiskPath {
      * @throws IOException
      */
     public boolean compareContent(final DiskPath toPath) throws IOException {
-        return getDiskFile().compareContent(this.getDiskFile());
+        return getDiskFile().compareContent(getDiskFile());
     }
 
     /**
      * @return
      */
     public BasicFileAttributes getAttrib() {
-        return this.attrib;
+        return attrib;
     }
 
     /**
      * @return
      */
     public DiskFile getDiskFile() {
-        return this.diskFile;
+        return diskFile;
     }
 
     /**
      * @return
      */
     public FileSize getDuplicateFileSize() {
-        return new FileSize(this.attrib.size()
-                * (null == this.duplicates ? 0 : this.duplicates.size()));
+        return new FileSize(attrib.size()
+                * (null == duplicates ? 0 : duplicates.size()));
     }
 
     public List<DiskPath> getDuplicates() {
-        return this.duplicates;
+        return duplicates;
     }
 
     /**
      * @return
      */
     public String getFileName() {
-        return this.path.getFileName().toString();
+        return path.getFileName().toString();
     }
 
     public FileSize getFileSize() {
-        return this.fileSize;
+        return fileSize;
     }
 
     /**
      * @return
      */
     public Path getPath() {
-        return this.path;
+        return path;
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return this.path.getFileName().toString();
+        return path.getFileName().toString();
     }
 
     public DiskPath rearrange() {

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.vj.util.file;
 
@@ -8,7 +8,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 
 /**
  * @author Vijay
- * 
+ *
  */
 public interface PathFilter {
     /**

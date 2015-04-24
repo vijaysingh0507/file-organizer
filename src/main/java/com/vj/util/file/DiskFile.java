@@ -63,7 +63,7 @@ public class DiskFile extends File {
 
     /**
      * TODO: Test and improve performance of this method.
-     * 
+     *
      * @param other
      * @return
      * @throws IOException

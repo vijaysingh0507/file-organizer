@@ -24,11 +24,11 @@ import com.vj.util.file.DiskFile;
 import com.vj.util.file.DuplicateFinder;
 
 /**
- * 
+ *
  * @author Vijay Singh
  */
 public class MainFrame extends javax.swing.JFrame implements
-        TableModelListener, PropertyChangeListener {
+TableModelListener, PropertyChangeListener {
 
     /**
      *
@@ -50,7 +50,7 @@ public class MainFrame extends javax.swing.JFrame implements
         resultTable.setColumnSelectionAllowed(false);
         resultTable.setRowSelectionAllowed(true);
         resultTable
-                .setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        .setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         resultTable.getSelectionModel().addListSelectionListener(diskDataModel);
         resultTable.setAutoCreateRowSorter(true);
         messageTimer = new Timer(1000, new ActionListener() {
@@ -109,13 +109,13 @@ public class MainFrame extends javax.swing.JFrame implements
 
         findDuplicateButton.setText("Find Duplicates");
         findDuplicateButton
-                .addActionListener(new java.awt.event.ActionListener() {
-                    @Override
-                    public void actionPerformed(
-                            final java.awt.event.ActionEvent evt) {
-                        findDuplicateButtonActionPerformed(evt);
-                    }
-                });
+        .addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(
+                    final java.awt.event.ActionEvent evt) {
+                findDuplicateButtonActionPerformed(evt);
+            }
+        });
 
         deleteAllButton.setText("Delete All");
         deleteAllButton.setEnabled(false);
@@ -138,70 +138,70 @@ public class MainFrame extends javax.swing.JFrame implements
                 filePanel);
         filePanel.setLayout(filePanelLayout);
         filePanelLayout
-                .setHorizontalGroup(filePanelLayout
-                        .createParallelGroup(
-                                org.jdesktop.layout.GroupLayout.LEADING)
+        .setHorizontalGroup(filePanelLayout
+                .createParallelGroup(
+                        org.jdesktop.layout.GroupLayout.LEADING)
                         .add(filePanelLayout
                                 .createSequentialGroup()
                                 .addContainerGap()
                                 .add(filePanelLayout
                                         .createParallelGroup(
                                                 org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(filePanelLayout
-                                                .createSequentialGroup()
-                                                .add(chhoseFolderLabel)
-                                                .addPreferredGap(
-                                                        org.jdesktop.layout.LayoutStyle.RELATED)
-                                                .add(folderNameField,
-                                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                                        303, Short.MAX_VALUE))
-                                        .add(org.jdesktop.layout.GroupLayout.TRAILING,
-                                                filePanelLayout
+                                                .add(filePanelLayout
                                                         .createSequentialGroup()
-                                                        .add(filterButton)
+                                                        .add(chhoseFolderLabel)
                                                         .addPreferredGap(
-                                                                org.jdesktop.layout.LayoutStyle.RELATED,
-                                                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                                                Short.MAX_VALUE)
-                                                        .add(findDuplicateButton,
-                                                                org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
-                                                                174,
-                                                                org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(
-                                        org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(filePanelLayout
-                                        .createParallelGroup(
-                                                org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(browseButton)
-                                        .add(org.jdesktop.layout.GroupLayout.TRAILING,
-                                                deleteAllButton))
-                                .addContainerGap()));
+                                                                org.jdesktop.layout.LayoutStyle.RELATED)
+                                                                .add(folderNameField,
+                                                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                                        303, Short.MAX_VALUE))
+                                                                        .add(org.jdesktop.layout.GroupLayout.TRAILING,
+                                                                                filePanelLayout
+                                                                                .createSequentialGroup()
+                                                                                .add(filterButton)
+                                                                                .addPreferredGap(
+                                                                                        org.jdesktop.layout.LayoutStyle.RELATED,
+                                                                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                                                        Short.MAX_VALUE)
+                                                                                        .add(findDuplicateButton,
+                                                                                                org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                                                                                                174,
+                                                                                                org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                                                                                .addPreferredGap(
+                                                                                                        org.jdesktop.layout.LayoutStyle.RELATED)
+                                                                                                        .add(filePanelLayout
+                                                                                                                .createParallelGroup(
+                                                                                                                        org.jdesktop.layout.GroupLayout.LEADING)
+                                                                                                                        .add(browseButton)
+                                                                                                                        .add(org.jdesktop.layout.GroupLayout.TRAILING,
+                                                                                                                                deleteAllButton))
+                                                                                                                                .addContainerGap()));
         filePanelLayout
-                .setVerticalGroup(filePanelLayout
-                        .createParallelGroup(
-                                org.jdesktop.layout.GroupLayout.LEADING)
+        .setVerticalGroup(filePanelLayout
+                .createParallelGroup(
+                        org.jdesktop.layout.GroupLayout.LEADING)
                         .add(filePanelLayout
                                 .createSequentialGroup()
                                 .addContainerGap()
                                 .add(filePanelLayout
                                         .createParallelGroup(
                                                 org.jdesktop.layout.GroupLayout.BASELINE)
-                                        .add(folderNameField,
-                                                org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
-                                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                                org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(browseButton)
-                                        .add(chhoseFolderLabel))
-                                .addPreferredGap(
-                                        org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(filePanelLayout
-                                        .createParallelGroup(
-                                                org.jdesktop.layout.GroupLayout.BASELINE)
-                                        .add(findDuplicateButton)
-                                        .add(deleteAllButton).add(filterButton))
-                                .addContainerGap(
-                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                        Short.MAX_VALUE)));
+                                                .add(folderNameField,
+                                                        org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                        org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                        .add(browseButton)
+                                                        .add(chhoseFolderLabel))
+                                                        .addPreferredGap(
+                                                                org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                                                .add(filePanelLayout
+                                                                        .createParallelGroup(
+                                                                                org.jdesktop.layout.GroupLayout.BASELINE)
+                                                                                .add(findDuplicateButton)
+                                                                                .add(deleteAllButton).add(filterButton))
+                                                                                .addContainerGap(
+                                                                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                                                        Short.MAX_VALUE)));
 
         resultTable.setModel(diskDataModel);
         resultTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -219,30 +219,30 @@ public class MainFrame extends javax.swing.JFrame implements
                 .createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                 .add(org.jdesktop.layout.GroupLayout.TRAILING,
                         layout.createSequentialGroup()
-                                .addContainerGap()
-                                .add(layout
-                                        .createParallelGroup(
-                                                org.jdesktop.layout.GroupLayout.TRAILING)
+                        .addContainerGap()
+                        .add(layout
+                                .createParallelGroup(
+                                        org.jdesktop.layout.GroupLayout.TRAILING)
                                         .add(org.jdesktop.layout.GroupLayout.LEADING,
                                                 scrollPane,
                                                 org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
                                                 487, Short.MAX_VALUE)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING,
-                                                filePanel,
-                                                0,
-                                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                                Short.MAX_VALUE)
-                                        .add(layout
-                                                .createSequentialGroup()
-                                                .add(statusBar,
+                                                .add(org.jdesktop.layout.GroupLayout.LEADING,
+                                                        filePanel,
+                                                        0,
                                                         org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                                        242, Short.MAX_VALUE)
-                                                .add(18, 18, 18)
-                                                .add(progressBar,
-                                                        org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
-                                                        227,
-                                                        org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap()));
+                                                        Short.MAX_VALUE)
+                                                        .add(layout
+                                                                .createSequentialGroup()
+                                                                .add(statusBar,
+                                                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                                        242, Short.MAX_VALUE)
+                                                                        .add(18, 18, 18)
+                                                                        .add(progressBar,
+                                                                                org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+                                                                                227,
+                                                                                org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                                                                .addContainerGap()));
         layout.setVerticalGroup(layout
                 .createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                 .add(layout
@@ -252,24 +252,24 @@ public class MainFrame extends javax.swing.JFrame implements
                                 org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
                                 org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
                                 org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(
-                                org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(scrollPane,
-                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                205, Short.MAX_VALUE)
-                        .add(18, 18, 18)
-                        .add(layout
-                                .createParallelGroup(
-                                        org.jdesktop.layout.GroupLayout.TRAILING,
-                                        false)
-                                .add(statusBar,
-                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                        Short.MAX_VALUE)
-                                .add(progressBar,
-                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-                                        Short.MAX_VALUE)).addContainerGap()));
+                                .addPreferredGap(
+                                        org.jdesktop.layout.LayoutStyle.RELATED)
+                                        .add(scrollPane,
+                                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                205, Short.MAX_VALUE)
+                                                .add(18, 18, 18)
+                                                .add(layout
+                                                        .createParallelGroup(
+                                                                org.jdesktop.layout.GroupLayout.TRAILING,
+                                                                false)
+                                                                .add(statusBar,
+                                                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                                        org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                                        Short.MAX_VALUE)
+                                                                        .add(progressBar,
+                                                                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                                                org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)).addContainerGap()));
 
         filePanel.getAccessibleContext().setAccessibleName("");
 

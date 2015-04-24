@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 
 /**
  * @author Vijay
- * 
+ *
  */
 public class FileSize implements Comparable<FileSize> {
     /**
@@ -26,12 +26,12 @@ public class FileSize implements Comparable<FileSize> {
     }
 
     /**
-	 * 
-	 */
+     *
+     */
     private final long size;
     /**
-	 * 
-	 */
+     *
+     */
     private final String readableSize;
 
     /**
@@ -39,16 +39,17 @@ public class FileSize implements Comparable<FileSize> {
      */
     public FileSize(final long size) {
         this.size = size;
-        this.readableSize = readableFileSize(size);
+        readableSize = readableFileSize(size);
     }
 
+    @Override
     public int compareTo(final FileSize o) {
-        return Long.compare(this.size, o.size);
+        return Long.compare(size, o.size);
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -63,7 +64,7 @@ public class FileSize implements Comparable<FileSize> {
             return false;
         }
         final FileSize other = (FileSize) obj;
-        if (this.size != other.size) {
+        if (size != other.size) {
             return false;
         }
         return true;
@@ -73,29 +74,30 @@ public class FileSize implements Comparable<FileSize> {
      * @return the size
      */
     public long getSize() {
-        return this.size;
+        return size;
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + (int) (this.size ^ (this.size >>> 32));
+        result = prime * result + (int) (size ^ size >>> 32);
         return result;
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#toString()
      */
+    @Override
     public String toString() {
-        return this.readableSize;
+        return readableSize;
     }
 
 }

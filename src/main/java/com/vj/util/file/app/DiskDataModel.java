@@ -28,7 +28,7 @@ import com.vj.util.file.FileSize;
  * @author Vijay Singh
  */
 public class DiskDataModel extends AbstractTableModel implements
-        DuplicateFileVisitor<DiskPath>, ListSelectionListener {
+DuplicateFileVisitor<DiskPath>, ListSelectionListener {
 
     private static final Logger LOGGER = LoggerFactory
             .getLogger(DiskDataModel.class);
@@ -119,7 +119,7 @@ public class DiskDataModel extends AbstractTableModel implements
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see javax.swing.table.TableModel#getColumnCount()
      */
     @Override
@@ -129,7 +129,7 @@ public class DiskDataModel extends AbstractTableModel implements
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see javax.swing.table.AbstractTableModel#getColumnName(int)
      */
     @Override
@@ -139,7 +139,7 @@ public class DiskDataModel extends AbstractTableModel implements
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see javax.swing.table.TableModel#getRowCount()
      */
     @Override
@@ -149,7 +149,7 @@ public class DiskDataModel extends AbstractTableModel implements
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see javax.swing.table.TableModel#getValueAt(int, int)
      */
     @Override
@@ -181,7 +181,7 @@ public class DiskDataModel extends AbstractTableModel implements
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see com.vj.util.file.DuplicateFileVisitor#refreshModel()
      */
     @Override
@@ -191,7 +191,7 @@ public class DiskDataModel extends AbstractTableModel implements
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * com.vj.util.file.DuplicateFileVisitor#visitDuplicateFile(java.lang.Object
      * )

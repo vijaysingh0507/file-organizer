@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author Vijay Singh
- * 
+ *
  */
 public class DuplicateFinder extends SwingWorker<Void, Void> {
 
@@ -64,12 +64,12 @@ public class DuplicateFinder extends SwingWorker<Void, Void> {
      */
     private float timeInSec;
     /**
-	 * 
-	 */
+     *
+     */
     private PathFilter filter;
 
     /**
-     * 
+     *
      * @param path
      *            The path of the directory in which to look for duplicate
      *            files.
@@ -80,7 +80,7 @@ public class DuplicateFinder extends SwingWorker<Void, Void> {
     public DuplicateFinder(final String path,
             final DuplicateFileVisitor<DiskPath> dupVisitor) {
         this.path = path;
-        this.duplicateVisitor = dupVisitor;
+        duplicateVisitor = dupVisitor;
     }
 
     /**
@@ -88,21 +88,21 @@ public class DuplicateFinder extends SwingWorker<Void, Void> {
      */
     public void find() throws IOException {
         final long start = System.currentTimeMillis();
-        final Path startingDir = Paths.get(this.path);
+        final Path startingDir = Paths.get(path);
         // printStats(startingDir);
         final FileCounter fileCounter = new FileCounter(startingDir);
         fileCounter.setFilter(filter);
         total = fileCounter.getCount();
         final long mid = System.currentTimeMillis();
         final String message = total + " files found in "
-                + ((float) (mid - start) / 1000)
+                + (float) (mid - start) / 1000
                 + " seconds. Locating Duplicates Now.";
         firePropertyChange("statusbar", "", message);
         LOGGER.info(message);
         Files.walkFileTree(startingDir, new MyVisitor());
         duplicateVisitor.completed();
         final long end = System.currentTimeMillis();
-        timeInSec = ((end - mid) / 1000);
+        timeInSec = (end - mid) / 1000;
     }
 
     @Override

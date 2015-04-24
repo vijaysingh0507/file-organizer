@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.vj.util.file;
 
@@ -8,12 +8,12 @@ import java.nio.file.attribute.BasicFileAttributes;
 
 /**
  * @author Vijay
- * 
+ *
  */
 public class DiskPathFilter implements PathFilter {
     /**
-	 * 
-	 */
+     *
+     */
     private String extensions;
     private String[] ext;
 
@@ -27,20 +27,20 @@ public class DiskPathFilter implements PathFilter {
     }
 
     /**
-	 * 
-	 */
+     *
+     */
     private long sizeMin = 0;
     /**
-	 * 
-	 */
+     *
+     */
     private long sizeMax = Long.MAX_VALUE;
     /**
-	 * 
-	 */
+     *
+     */
     private long lastModifiedMin = 0;
     /**
-	 * 
-	 */
+     *
+     */
     private long lastModifiedMax = Long.MAX_VALUE;
 
     public long getLastModifiedMin() {
@@ -77,7 +77,7 @@ public class DiskPathFilter implements PathFilter {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see com.vj.util.file.PathFilter#accept(java.nio.file.Path,
      * java.nio.file.attribute.BasicFileAttributes)
      */
