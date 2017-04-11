@@ -15,4 +15,5 @@ I invite Contributors to add new features/improve the project and make it a work
 Future Goals:
 =============
 1) Apply Filters to find duplicates in specified type of files.
+2) 
 
